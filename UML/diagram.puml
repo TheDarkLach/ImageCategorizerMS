@@ -1,0 +1,19 @@
+@startuml
+actor User
+boundary "FastAPI" as API
+database "File System" as FS
+
+User -> API: POST /upload/
+API -> API: Create category directory if it doesn't exist
+API -> API: Generate image ID and path
+API -> API: Save the image
+API -> FS: Store image
+API -> User: JSONResponse {"message": "Cat image ... is now stored in ... category"}
+
+User -> API: POST /download/
+API -> API: Create the file path
+API -> API: Check if the file exists
+API -> FS: Retrieve image
+API -> User: FileResponse with image
+
+@enduml
