@@ -2,6 +2,12 @@
 
 This repository contains a FastAPI microservice for uploading and downloading cat images by category.
 
+## Installation
+First and foremost, install the required dependencies by running the following command:
+```bash
+pip install -r requirements.txt
+```
+
 ## Communication Contract
 
 ### Uploading Cat Images
@@ -57,3 +63,13 @@ response = requests.post(url, data=data)
 
 ### UML Diagram
 ![Alt text](/UML/UML.png?raw=true "UML Diagram")
+
+### Running tests
+To run tests, ensure you have `pytest` installed. If not, install it using the command below:
+```bash
+pip install pytest
+```
+Then, run the following command:
+```bash
+python test_main.py
+```
